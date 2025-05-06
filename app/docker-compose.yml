@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+    # Adicione outras variáveis de ambiente conforme necessário
