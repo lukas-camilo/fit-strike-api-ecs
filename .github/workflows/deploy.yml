@@ -17,13 +17,13 @@ jobs:
               uses: actions/setup-java@v4
               with:
                 java-version: '21'
-                distribution: 'temurin'
+                distribution: 'graalvm'
 
             - name: Grant execute permission for gradlew
               run: chmod +x app/gradlew
 
             - name: Build with gradle
-              run: ./gradlew bootBuildImage
+              run: ./gradlew nativeCompile
               working-directory: app
     
     # Job Push to ECR
