@@ -5,11 +5,12 @@ WORKDIR /app
 
 COPY . .
 
+RUN rm -rf /root/.gradle /app/.gradle /app/build
+
 RUN chmod +x ./gradlew
 
 # Compile o binário nativo (ajuste conforme seu build tool)
-RUN ./gradlew nativeCompile --no-daemon
-# ou, se usar Spring Boot 3+: RUN ./gradlew bootBuildNative --no-daemon
+RUN ./gradlew clean nativeCompile --no-daemon
 
 # Etapa 2: Imagem final enxuta
 FROM frolvlad/alpine-glibc:alpine-3.17
