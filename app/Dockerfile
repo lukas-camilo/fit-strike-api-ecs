@@ -1,16 +1,15 @@
-# Etapa 1: Build da imagem nativa com GraalVM
+# Etapa 1: Build do binário nativo com GraalVM
 FROM ghcr.io/graalvm/graalvm-community:24.0.1-ol8-20250415 as builder
 
 WORKDIR /app
 
-# Copie todos os arquivos do projeto (inclua build scripts)
 COPY . .
 
-# Dê permissão de execução ao gradlew (se usar Gradle Wrapper)
 RUN chmod +x ./gradlew
 
-# Compile o binário nativo
-RUN ./gradlew bootBuildImage --no-daemon
+# Compile o binário nativo (ajuste conforme seu build tool)
+RUN ./gradlew nativeCompile --no-daemon
+# ou, se usar Spring Boot 3+: RUN ./gradlew bootBuildNative --no-daemon
 
 # Etapa 2: Imagem final enxuta
 FROM frolvlad/alpine-glibc:alpine-3.17
