@@ -1,5 +1,5 @@
 # Etapa 1: Build do binário nativo com GraalVM
-FROM ghcr.io/graalvm/graalvm-community:24.0.1-ol8-20250415 as builder
+FROM ghcr.io/graalvm/graalvm-community:21.0.2-ol9-20240116 as builder
 
 WORKDIR /app
 
