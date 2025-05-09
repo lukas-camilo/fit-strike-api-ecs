@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-java
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-java
+  template:
+    metadata:
+      labels:
+        app: ms-java
+    spec:
+      containers:
+        - name: ms-java
+          image: fit-strike-api:latest
+          ports:
+            - containerPort: 8080
