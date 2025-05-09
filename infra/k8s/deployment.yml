@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: ms-java
-          image: fit-strike-api:latest
+          image: lucascamilo2024/fit-strike-api:latest
           ports:
             - containerPort: 8080
