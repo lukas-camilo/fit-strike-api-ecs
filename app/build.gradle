@@ -23,6 +23,10 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	implementation 'software.amazon.awssdk:dynamodb-enhanced:2.25.32'
+	implementation 'software.amazon.awssdk:dynamodb:2.25.32'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
