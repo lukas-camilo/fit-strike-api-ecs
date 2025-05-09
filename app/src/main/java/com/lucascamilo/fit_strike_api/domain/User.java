@@ -1,9 +1,5 @@
 package com.lucascamilo.fit_strike_api.domain;
 
-import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
-import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
-
-@DynamoDbBean
 public class User {
     private String id;
     private String name;
@@ -17,7 +13,6 @@ public class User {
         this.email = email;
     }
 
-    @DynamoDbPartitionKey
     public String getId() {
         return id;
     }
