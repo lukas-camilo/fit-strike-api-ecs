@@ -1,0 +1,13 @@
+apiVersion: http.keda.sh/v1alpha1
+kind: HTTPScaledObject
+metadata:
+  name: ms-java-http
+spec:
+  scaleTargetRef:
+    service: ms-java # Nome do Service Kubernetes
+    port: 80         # Porta exposta pelo Service (conforme seu service.yml)
+  replicas:
+    min: 0
+    max: 5
+  hosts:
+    - ms-java.local
