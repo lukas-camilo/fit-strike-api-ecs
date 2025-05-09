@@ -5,5 +5,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - SPRING_PROFILES_ACTIVE=prod
-    # Adicione outras variáveis de ambiente conforme necessário
+      - SPRING_PROFILES_ACTIVE=local
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AWS_REGION=us-east-1
